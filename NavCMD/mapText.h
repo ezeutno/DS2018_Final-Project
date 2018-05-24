@@ -3,11 +3,14 @@
 #include <fstream>
 using namespace std;
 
+#ifndef mapText_h
+#define mapText_h
+
 class Map{
 	private:
 		string name;
 		string location;
-		bool Created;
+		bool runCond;
 		ofstream myfileWrite;
 		ifstream myfileRead;
 		vector< vector<bool> > data;
@@ -15,32 +18,33 @@ class Map{
 		Map();
 		Map(string loc, string = "Problem");
 		string getName();
-		bool isCreated();
+		bool isRun();
 		bool getData(int x, int y);
 		void setName(string name);
 		void setLocation(string loc);
-		void create();
+		int* getSize();
+		void run();
 		void edit();
 		void save();
 		void print(char = '*', int = 1);
 };
 
 Map::Map(){
+	runCond = false;
 }
 
 Map::Map(string loc, string name){
-	Created = false;
+	runCond = false;
 	location = loc;
 	this->name = name;
 }
 
-bool Map::isCreated(){
-	Created = false;
-	return Created;
+bool Map::isRun(){
+	return runCond;
 }
 
-void Map::create(){
-	Created = true;
+void Map::run(){
+	runCond = true;
 	myfileRead.open(location.c_str());
 	if (myfileRead.is_open()){
 		string line;
@@ -97,6 +101,13 @@ bool Map::getData(int x, int y){
 	return false;
 }
 
+int* Map::getSize(){
+	int arr[2] = {data.size(),data[0].size()};
+	return arr;
+}
+
 string Map::getName(){
 	return name;
 }
+
+#endif
