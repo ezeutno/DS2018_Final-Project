@@ -1,16 +1,16 @@
 #include <iostream>
+#include 'mapText.h'
 using namespace std;
 
 class NavRoutes{
 	private:
-		bool[][] MapTemplate;
-		int[] size;
-		int[] startPoint;
-		int[] currPoint;
-		int[] endPoint;
+		Map data;
+		int[2] size;
+		int[2] startPoint;
+		int[2] currPoint;
+		int[2] endPoint;
+		void create();
 	public:
 		NavRoutes();
-		
-		
-		
+		NavRoutes(Map data);
 };
