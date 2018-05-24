@@ -13,22 +13,25 @@ class Map{
 		vector< vector<bool> > data;
 	public:
 		Map();
-		Map(string loc);
+		Map(string loc, string = "Problem");
 		string getName();
 		bool isCreated();
 		bool getData(int x, int y);
+		void setName(string name);
+		void setLocation(string loc);
 		void create();
 		void edit();
 		void save();
-		void print();
+		void print(char = '*', int = 1);
 };
 
 Map::Map(){
 }
 
-Map::Map(string loc){
+Map::Map(string loc, string name){
 	Created = false;
 	location = loc;
+	this->name = name;
 }
 
 bool Map::isCreated(){
@@ -56,17 +59,42 @@ void Map::create(){
   }
 }
 
-void Map::print(){
+void Map::print(char block, int border){
 	vector< vector<bool> >::iterator i;
 	vector<bool>::iterator a;
-	for (i=data.begin(); i != data.end(); ++i){
-		vector<bool> res= *i;
-		for (a=res.begin(); a != res.end(); ++a){
-			 cout<<*a;
-		}
+	//name	
+	cout<<"Problem Name : "<<name<<endl;
+	//border
+	for(int c=0;c<border;c++){
+		for (a= data[0].begin(); a != data[0].end(); ++a) cout<<"-";
+		for (int d=0;d<border;d++) cout<<"--";
 		cout<<endl;
 	}
-		 
+	for (i= data.begin(); i != data.end(); ++i){
+		vector<bool> res= *i;
+		for (int d=0;d<border;d++) cout<<"|";
+		for (a=res.begin(); a != res.end(); ++a){
+				if(*a) cout<<block;
+				else cout<<' ';
+		}
+		for (int d=0;d<border;d++) cout<<"|";
+		cout<<endl;
+ 	}
+ 	//border
+	for(int c=0;c<border;c++){
+		for (a= data[0].begin(); a != data[0].end(); ++a) cout<<"-";
+		for (int d=0;d<border;d++) cout<<"--";
+		cout<<endl;
+	}
+}
+
+bool Map::getData(int x, int y){
+	if (data.size() > x){
+		if(data[x].size() > y){
+			return data[x][y];
+		}
+	}
+	return false;
 }
 
 string Map::getName(){

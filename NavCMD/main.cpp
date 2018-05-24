@@ -6,7 +6,6 @@ int main(){
 	cout<<"MAIN"<<endl;
 	Map res("example.txt");
 	res.create();
-	cout<<endl;
-	res.print();
-	return 0;
+	res.print('*',1);
+	cout<<res.getData(7,6)<<endl;
 }
