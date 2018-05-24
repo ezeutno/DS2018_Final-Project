@@ -14,3 +14,11 @@ class NavRoutes{
 		NavRoutes();
 		NavRoutes(Map data);
 };
+
+NavRoutes::NavRoutes(){
+	create();
+}
+
+NavRoutes::	NavRoutes(Map data){
+	this.data = data;
+}
