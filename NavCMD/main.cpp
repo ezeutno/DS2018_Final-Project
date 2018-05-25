@@ -3,14 +3,18 @@
 #include "nav.h"
 using namespace std;
 
-int main(){
-	cout<<"MAIN"<<endl;
+int main() {
+	cout << "MAIN" << endl;
 	Map res("example.txt");
 	res.run();
-	res.print('*',1);
-	cout<<res.getData(7,6)<<endl;
-	int start[] = {2,0};
-	int end[] = {2,5};
-	NavRoutes(res,start,end);
-	return 0 ;
+	res.print('X', 1);
+	cout <<"GET DATA : "<< res.getData(7, 6) << endl;
+	cout <<"GET DATA : "<< res.getData(0, 1) << endl;
+	int start[] = { 2,0 };
+	int end[] = { 2,5 };
+	NavRoutes result(res, start, end);
+	cout << "Press Enter to Continue....";
+	cin.sync();
+	cin.ignore();
+	return 0;
 }
