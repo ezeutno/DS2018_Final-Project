@@ -16,7 +16,7 @@ protected:
 	void create();
 public:
 	NavRoutes();
-	NavRoutes(const Map & data, int start[], int end[]);
+	NavRoutes(Map & data, int start[], int end[]);
 	void setStartPoint(int x, int y);
 	void setEndPoint(int x, int y);
 	bool checkColl();
@@ -30,8 +30,9 @@ NavRoutes::NavRoutes() {
 	create();
 }
 
-NavRoutes::NavRoutes(const Map &data, int start[], int end[]) {
+NavRoutes::NavRoutes(Map &data, int start[], int end[]) {
 	this->data = data;
+	cout<<"LOCATION : "<<this->data.getLocation()<<endl;;
 	this->data.run();
 	size[0] = this->data.getSize('x');
 	size[1] = this->data.getSize('y');

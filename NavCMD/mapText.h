@@ -29,7 +29,7 @@ public:
 	void edit();
 	void save();
 	void print(char = '*', int = 1);
-	Map& operator=(const Map & a);
+	Map& operator=(Map & a);
 };
 
 Map::Map() {
@@ -96,9 +96,10 @@ void Map::print(char block, int border) {
 	}
 }
 
-Map& Map::operator=(const Map & a) {
-	Map newMap(a.location,a.name);
-	return newMap;
+Map& Map::operator=(Map & a) {
+	cout<<"A:"<<a.location<<"|"<<a.name<<endl;
+	cout<<"THIS:"<<this->location<<"|"<<this->name<<endl;
+	return a;
 }
 
 bool Map::getData(int x, int y) {
