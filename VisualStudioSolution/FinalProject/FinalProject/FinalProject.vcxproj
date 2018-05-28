@@ -115,15 +115,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AllMaps.cpp" />
+    <ClCompile Include="linkedlistADT.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mapText.cpp" />
+    <ClCompile Include="nav.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllMaps.h" />
     <ClInclude Include="Graphs.h" />
     <ClInclude Include="LinkList.h" />
     <ClInclude Include="mapText.h" />
     <ClInclude Include="nav.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="AllMaps.txt" />
     <Text Include="example.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

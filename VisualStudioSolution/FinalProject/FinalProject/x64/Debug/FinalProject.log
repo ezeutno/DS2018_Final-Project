@@ -1,4 +1,4 @@
-﻿  main.cpp
-c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\maptext.h(165): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\maptext.h(167): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+﻿  mapText.cpp
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\maptext.cpp(133): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\maptext.cpp(136): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   FinalProject.vcxproj -> C:\Users\Ezech\iCloudDrive\Programming\C++\DataStructure2018_Final-Project\VisualStudioSolution\FinalProject\x64\Debug\FinalProject.exe

@@ -18,23 +18,41 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mapText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nav.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="linkedlistADT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllMaps.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="nav.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="mapText.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LinkList.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="nav.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AllMaps.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="example.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="AllMaps.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
