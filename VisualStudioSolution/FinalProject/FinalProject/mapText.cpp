@@ -6,7 +6,7 @@ Map::Map() {
 
 Map::Map(string loc, string name) {
 	runCond = false;
-	location = loc;
+	location = "C:/Users/Ezech/iCloudDrive/Programming/C++/DataStructure2018_Final-Project/VisualStudioSolution/FinalProject/FinalProject/"+loc;
 	this->name = name;
 }
 
@@ -15,19 +15,19 @@ bool Map::isRun() {
 }
 
 void Map::create() {
-	string filename;
 	int x, y;
 	try {
-		cout << "Please insert file name : ";
-		getline(cin, filename);
-		location = filename + ".txt";
-		name = filename;
+		cout << "Please insert problem name : ";
+		getline(cin, name);
+		cout << "Please insert file name    : ";
+		getline(cin, location);
+		location += ".txt";
 		do{
-			cout << "Please input x dimention: ";
+			cout << "Please input x dimention : ";
 			cin >> x;
 		} while (x < 0);
 		do {
-			cout << "Please input y dimention: ";
+			cout << "Please input y dimention : ";
 			cin >> y;
 		} while (y < 0);
 		cin.sync();

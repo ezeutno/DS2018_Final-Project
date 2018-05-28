@@ -20,12 +20,12 @@ public:
 	Map(string loc, string = "Problem");
 	string getName();
 	bool isRun();
+	void run();
 	bool getData(int x, int y);
 	void setName(string name);
 	void setLocation(string loc);
 	int getSize(char position);
 	string getLocation();
-	void run();
 	void create();
 	void print(char = '*', int = 1);
 	void operator=(const Map & a);

@@ -116,7 +116,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AllMaps.cpp" />
-    <ClCompile Include="linkedlistADT.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapText.cpp" />
     <ClCompile Include="nav.cpp" />

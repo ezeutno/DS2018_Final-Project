@@ -24,9 +24,6 @@
     <ClCompile Include="nav.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="linkedlistADT.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AllMaps.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -45,7 +42,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AllMaps.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
