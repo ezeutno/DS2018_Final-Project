@@ -15,8 +15,6 @@ private:
 	ofstream myfileWrite;
 	ifstream myfileRead;
 	vector< vector<bool> > data;
-protected:
-	void create();
 public:
 	Map();
 	Map(string loc, string = "Problem");
@@ -28,8 +26,7 @@ public:
 	int getSize(char position);
 	string getLocation();
 	void run();
-	void edit();
-	void save();
+	void create();
 	void print(char = '*', int = 1);
 	void operator=(const Map & a);
 };
@@ -54,17 +51,36 @@ void Map::create() {
 	try {
 		cout << "Please insert file name : ";
 		getline(cin, filename);
+		location = filename+".txt";
+		name = filename;
 		cout << "Please input x dimention: ";
 		cin >> x;
 		cout << "Please input y dimention: ";
 		cin >> y;
+		cin.sync();
+		cin.ignore();
+		myfileWrite = ofstream(location.c_str());
+		for (int i = 0; i < y; i++) {
+			string data;
+			getline(cin, data);
+			if (data.length() > x) {
+				data = data.substr(0, x);
+			}else {
+				for (int a = 0; a < x - data.length(); a++) {
+					data += "*";
+				}
+			}
+			for (int b = 0; b < data.length(); b++) {
+				if (data[b] == ' ') myfileWrite << '0';
+				else myfileWrite << '1';
+			}
+			if (i != y ) myfileWrite << endl;
+		}
+		myfileWrite.close();
 	}
 	catch(const char* msg){
 		cout << msg << endl;
 	}
-	
-
-
 }
 
 void Map::run() {

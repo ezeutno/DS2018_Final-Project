@@ -13,6 +13,10 @@ int main() {
 	int start[] = { 2,0 };
 	int end[] = { 2,5 };
 	NavRoutes result(res, start, end);
+	Map result2;
+	result2.create();
+	result2.run();
+	result2.print('Y',3);
 	cout << "Press Enter to Continue....";
 	cin.sync();
 	cin.ignore();

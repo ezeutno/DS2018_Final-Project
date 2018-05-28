@@ -118,7 +118,8 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="main.h" />
+    <ClInclude Include="Graphs.h" />
+    <ClInclude Include="LinkList.h" />
     <ClInclude Include="mapText.h" />
     <ClInclude Include="nav.h" />
   </ItemGroup>
