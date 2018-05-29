@@ -117,7 +117,7 @@
   <ItemGroup>
     <ClCompile Include="AllMaps.cpp" />
     <ClCompile Include="Graphs.cpp" />
-    <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="interface.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapText.cpp" />
     <ClCompile Include="nav.cpp" />

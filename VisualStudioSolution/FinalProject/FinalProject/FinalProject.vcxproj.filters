@@ -30,7 +30,7 @@
     <ClCompile Include="Graphs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Interface.cpp">
+    <ClCompile Include="interface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
