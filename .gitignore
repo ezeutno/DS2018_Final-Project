@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/DataStructure2018_Final-Project2/v15/.suo
+/.vs/DataStructure2018_Final-Project2/v15
+/.vs
+/VisualStudioSolution/FinalProject/.vs/FinalProject/v15/ipch/AutoPCH
+/.gitignore
