@@ -1,7 +1,12 @@
 #include "nav.h"
 
-NavRoutes::NavRoutes() {
-	create();
+NavRoutes::NavRoutes(){
+}
+
+NavRoutes::NavRoutes(Map &data) {
+	this->data = data;
+	size[0] = this->data.getSize('x');
+	size[1] = this->data.getSize('y');
 }
 
 NavRoutes::NavRoutes(Map &data, int start[], int end[]) {
@@ -10,10 +15,6 @@ NavRoutes::NavRoutes(Map &data, int start[], int end[]) {
 	size[1] = this->data.getSize('y');
 	setStartPoint(start[0], start[1]);
 	setEndPoint(end[0], end[1]);
-}
-
-void NavRoutes::create() {
-
 }
 
 void NavRoutes::setStartPoint(int x, int y) {

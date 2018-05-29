@@ -4,7 +4,8 @@
 #include "nav.h"
 using namespace std;
 
-
+#ifndef Graphs_h
+#define Graphs_h
 class Graph {
 private:
 	NavRoutes main;
@@ -14,7 +15,7 @@ private:
 	list< list<char> >::iterator iter;
 	void insert(list<char> data);
 protected:
-	void right(NavRoutes main, list<char> list, vector< array<int,2> > points);
+	void right(NavRoutes main, list<char> list, vector< array<int, 2> > points);
 	void left(NavRoutes main, list<char> list, vector< array<int, 2> > points);
 	void up(NavRoutes main, list<char> list, vector< array<int, 2> > points);
 	void down(NavRoutes main, list<char> list, vector< array<int, 2> > points);
@@ -30,3 +31,4 @@ public:
 	void run();
 	void print();
 };
+#endif 

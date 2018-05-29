@@ -1,5 +1,8 @@
 #include <iostream>
+#include <cstdlib>
+#include <conio.h>
 #include <string>
+#include "AllMaps.h"
 using namespace std;
 #ifndef INTERFACE_H
 #define INTERFACE_H
@@ -16,11 +19,11 @@ using namespace std;
 class interface {
 public:
 	interface();
-	void menu();
-	void select_map();
-	void list_maps();
+	void menu(AllMaps all);
+	void select_map(AllMaps all);
+	void list_maps(AllMaps all);
 	void header(string title);
-	void create_map();
+	void create_map(AllMaps all);
 private:
 	string b_horizontal = "";
 };

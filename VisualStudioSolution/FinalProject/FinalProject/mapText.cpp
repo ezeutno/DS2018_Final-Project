@@ -99,12 +99,18 @@ void Map::print(char block, int border) {
 		for (int d = 0; d<border; d++) cout << "--";
 		cout << endl;
 	}
+	cout << "--";
+	for (int d = 0; d < data[0].size(); d++)cout << d % 10;
+	cout <<"-"<<endl;
+	int e = 0;
 	for (i = data.begin(); i != data.end(); ++i) {
 		vector<bool> res = *i;
 		for (int d = 0; d<border; d++) cout << "|";
+		cout << e % 10;
+		e++;
 		for (a = res.begin(); a != res.end(); ++a) {
 			if (*a) cout << block;
-			else cout << '1';
+			else cout << ' ';
 		}
 		for (int d = 0; d<border; d++) cout << "|";
 		cout << endl;
@@ -112,7 +118,7 @@ void Map::print(char block, int border) {
 	//border
 	for (int c = 0; c<border; c++) {
 		for (a = data[0].begin(); a != data[0].end(); ++a) cout << "-";
-		for (int d = 0; d<border; d++) cout << "--";
+		for (int d = 0; d<border; d++) cout << "---";
 		cout << endl;
 	}
 }

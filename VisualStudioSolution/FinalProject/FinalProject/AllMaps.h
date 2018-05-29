@@ -5,6 +5,9 @@
 #include "mapText.h"
 using namespace std;
 
+#ifndef AllMaps_H
+#define AllMaps_H
+
 class AllMaps {
 private:
 	ofstream myfileWrite;
@@ -20,3 +23,7 @@ public:
 	Map getData(int i);
 	void print();
 };
+
+#endif 
+
+

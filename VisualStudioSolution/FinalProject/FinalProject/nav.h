@@ -14,10 +14,9 @@ private:
 	int startPoint[2];
 	int currPoint[2];
 	int endPoint[2];
-protected:
-	void create();
 public:
 	NavRoutes();
+	NavRoutes(Map &data);
 	NavRoutes(Map & data, int start[], int end[]);
 	void setStartPoint(int x, int y);
 	void setEndPoint(int x, int y);

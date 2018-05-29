@@ -1,8 +1,4 @@
-#include <iostream>
-#include <cstdlib>
-#include <conio.h>
 #include "interface.h"
-using namespace std;
 
 interface::interface() {
 
@@ -20,28 +16,29 @@ void interface::header(string title) {
 	cout << B_V << "\t\t\t\t" <<B_V<< endl;
 }
 
-void interface::select_map() {
+void interface::select_map(AllMaps all) {
 	header("SELECT MAP");
 	cout << B_BL << b_horizontal.c_str() << B_BR << endl;
 	cin.sync();
 	cin.ignore();
 }
 
-void interface::list_maps() {
+void interface::list_maps(AllMaps all) {
 	header("LIST MAPS");
+	all.print();
 	cout << B_BL << b_horizontal.c_str() << B_BR << endl;
 	cin.sync();
 	cin.ignore();
 }
 
-void interface::create_map() {
+void interface::create_map(AllMaps all) {
 	header("CREATE MAP");
 	cout << B_BL << b_horizontal.c_str() << B_BR << endl;
 	cin.sync();
 	cin.ignore();
 }
 
-void interface::menu() {
+void interface::menu(AllMaps all) {
 	while (true) {
 		header("      MENU");
 		system("Color 0E");
@@ -55,10 +52,10 @@ void interface::menu() {
 		int x = _getch();
 		switch (x) {
 		case '1':
-			select_map();
+			select_map(all);
 			break;
 		case '2':
-			list_maps();
+			list_maps(all);
 			break;
 		case '3':
 			create_map();
