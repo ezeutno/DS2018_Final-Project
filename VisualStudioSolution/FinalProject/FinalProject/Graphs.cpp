@@ -1,12 +1,12 @@
 #include "Graphs.h"
 
-void Graph::insert(linkedlistADT<char> data){
-	linkedlistADT< linkedlistADT<char> >::iterator iter;
-	linkedlistADT< linkedlistADT<char> >::iterator before;
+void Graph::insert(list<char> data){
+	list< list<char> >::iterator iter;
+	list< list<char> >::iterator before;
 	before = AllRoutes.begin();
 	bool newtempCond = false;
 	for (iter = AllRoutes.begin(); iter != AllRoutes.end(); iter++) {
-		linkedlistADT<char> newdata = *iter;
+		list<char> newdata = *iter;
 		if (newdata.size()> data.size()) {
 			AllRoutes.insert(before, data);
 			newtempCond = true;
@@ -18,10 +18,11 @@ void Graph::insert(linkedlistADT<char> data){
 	}
 }
 
-void Graph::right(NavRoutes main, linkedlistADT<char> list, vector<array<int, 2>> points) {
+void Graph::right(NavRoutes main, list<char> listData, vector<array<int, 2>> points) {
 	if (main.right()) {
 		if (main.checkColl()) {
-			insert(list);
+			listData.push_back('r');
+			insert(listData);
 		}else {
 			bool newcond = false;
 			for (int i = 0; i < points.size(); i++) {
@@ -29,19 +30,20 @@ void Graph::right(NavRoutes main, linkedlistADT<char> list, vector<array<int, 2>
 			}
 			if (!newcond) {
 				points.push_back({ main.getX() ,main.getY() });
-				list.push_back('r');
-				right(main, list, points);
-				down(main, list, points);
-				up(main, list, points);
+				listData.push_back('r');
+				right(main, listData, points);
+				down(main, listData, points);
+				up(main, listData, points);
 			}
 		}
 	}
 }
 
-void Graph::left(NavRoutes main, linkedlistADT<char> list, vector<array<int, 2>> points){
+void Graph::left(NavRoutes main, list<char> listData, vector<array<int, 2>> points){
 	if (main.left()) {
 		if (main.checkColl()) {
-			insert(list);
+			listData.push_back('l');
+			insert(listData);
 		}
 		else {
 			bool newcond = false;
@@ -50,19 +52,20 @@ void Graph::left(NavRoutes main, linkedlistADT<char> list, vector<array<int, 2>>
 			}
 			if (!newcond) {
 				points.push_back({ main.getX() ,main.getY() });
-				list.push_back('l');
-				left(main, list, points);
-				down(main, list, points);
-				up(main,list, points);
+				listData.push_back('l');
+				left(main, listData, points);
+				down(main, listData, points);
+				up(main, listData, points);
 			}
 		}
 	}
 }
 
-void Graph::up(NavRoutes main, linkedlistADT<char> list, vector<array<int, 2>> points){
+void Graph::up(NavRoutes main, list<char> listData, vector<array<int, 2>> points){
 	if (main.up()) {
 		if (main.checkColl()) {
-			insert(list);
+			listData.push_back('u');
+			insert(listData);
 		}
 		else {
 			bool newcond = false;
@@ -71,19 +74,20 @@ void Graph::up(NavRoutes main, linkedlistADT<char> list, vector<array<int, 2>> p
 			}
 			if (!newcond) {
 				points.push_back({ main.getX() ,main.getY() });
-				list.push_back('u');
-				right(main, list, points);
-				left(main,list, points);
-				up(main,list, points);
+				listData.push_back('u');
+				right(main, listData, points);
+				left(main, listData, points);
+				up(main, listData, points);
 			}
 		}
 	}
 }
 
-void Graph::down(NavRoutes main, linkedlistADT<char> list, vector<array<int, 2>> points){
+void Graph::down(NavRoutes main, list<char> listData, vector<array<int, 2>> points){
 	if (main.down()) {
 		if (main.checkColl()) {
-			insert(list);
+			listData.push_back('d');
+			insert(listData);
 		}
 		else {
 			bool newcond = false;
@@ -92,10 +96,10 @@ void Graph::down(NavRoutes main, linkedlistADT<char> list, vector<array<int, 2>>
 			}
 			if (!newcond) {
 				points.push_back({ main.getX() ,main.getY() });
-				list.push_back('d');
-				right(main, list, points);
-				down(main, list, points);
-				left(main, list, points);
+				listData.push_back('d');
+				right(main, listData, points);
+				down(main, listData, points);
+				left(main, listData, points);
 			}
 		}
 	}
@@ -116,24 +120,22 @@ bool Graph::isRun(){
 
 void Graph::run(){
 	cond = true;
-	linkedlistADT<char> movements;
+	list<char> movements;
 	vector<array<int,2>> points;
-	cout << "RIGHT" << endl;
+	cout << "Running Calculation......";
 	right(main, movements, points);
-	cout << "LEFT" << endl;
 	left(main, movements, points);
-	cout << "DOWN" << endl;
 	down(main, movements, points);
-	cout << "UP" << endl;
 	up(main, movements, points);
+	cout << "Finished!"<<endl;
 }
 
 void Graph::print(){
-	linkedlistADT< linkedlistADT<char> >::iterator iter;
-	cout <<"SIZE : "<< AllRoutes.size() << endl;
+	list< list<char> >::iterator iter;
+	cout <<"Size : "<< AllRoutes.size() << endl;
 	for (iter = AllRoutes.begin(); iter != AllRoutes.end(); iter++) {
-		linkedlistADT<char> newdata = *iter;
-		linkedlistADT<char>::iterator newiter;
+		list<char> newdata = *iter;
+		list<char>::iterator newiter;
 		for (newiter = newdata.begin(); newiter != newdata.end(); newiter++) {
 			cout << *newiter << "-";
 		}

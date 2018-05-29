@@ -124,7 +124,6 @@
   <ItemGroup>
     <ClInclude Include="AllMaps.h" />
     <ClInclude Include="Graphs.h" />
-    <ClInclude Include="LinkList.h" />
     <ClInclude Include="mapText.h" />
     <ClInclude Include="nav.h" />
   </ItemGroup>

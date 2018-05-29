@@ -16,6 +16,15 @@ struct NODE {
 };
 
 template<typename T>
+NODE<T>* Clone(NODE<T>* list) {
+	if (list == NULL) return NULL;
+	NODE<T>* result = new NODE<T>();
+	result->data = list->data;
+	result->link = Clone(list->link);
+	return result;
+}
+
+template<typename T>
 class linkedlistADT {
 public:
 
@@ -51,6 +60,7 @@ public:
 	iterator find(iterator begin, iterator end, const T &book);
 	iterator push_front(const T &book);
 	iterator push_back(const T &book);
+	void operator=(linkedlistADT &a);
 	void clear();
 	bool empty();
 	int size();
@@ -154,6 +164,11 @@ typename linkedlistADT<T>::iterator linkedlistADT<T>::push_back(const T &book) {
 	count++;
 	it++;
 	return it;
+}
+
+template<typename T>
+void linkedlistADT<T>::operator=(linkedlistADT & a){
+	this->head = Clone(a.head);
 }
 
 template<typename T>

@@ -39,6 +39,7 @@ int NavRoutes::getY(){
 bool NavRoutes::right() {
 	if (currPoint[1] + 1 < size[1]) {
 		if (!data.getData(currPoint[0], currPoint[1] + 1)) {
+			//cout << "r" << endl;
 			currPoint[1] += 1;
 			return true;
 		}
@@ -49,6 +50,7 @@ bool NavRoutes::right() {
 bool NavRoutes::left() {
 	if (currPoint[1] - 1 >= 0) {
 		if (!data.getData(currPoint[0], currPoint[1] - 1)) {
+			//cout << "l" << endl;
 			currPoint[1] -= 1;
 			return true;
 		}
@@ -59,6 +61,7 @@ bool NavRoutes::left() {
 bool NavRoutes::down() {
 	if (currPoint[0] + 1 < size[0]) {
 		if (!data.getData(currPoint[0] + 1, currPoint[1])) {
+			//cout << "d" <<endl;
 			currPoint[0] += 1;
 			return true;
 		}
@@ -69,6 +72,7 @@ bool NavRoutes::down() {
 bool NavRoutes::up() {
 	if (currPoint[0] - 1 >= 0) {
 		if (!data.getData(currPoint[0] - 1, currPoint[1])) {
+			/*cout << "u" << endl;*/
 			currPoint[0] -= 1;
 			return true;
 		}
@@ -77,7 +81,9 @@ bool NavRoutes::up() {
 }
 
 bool NavRoutes::checkColl() {
+	/*cout << currPoint[0] << "|" << currPoint[1] << endl;
+	cout << "COLL : " << currPoint[0] << endPoint[0] << "|" << currPoint[1] << endPoint[1];*/
 	bool newBool = currPoint[0] == endPoint[0] && currPoint[1] == endPoint[1];
-	if(newBool) cout<<"collided"<<endl;
+	/*if(newBool) cout<<"collided"<<endl;*/
 	return newBool;
 }

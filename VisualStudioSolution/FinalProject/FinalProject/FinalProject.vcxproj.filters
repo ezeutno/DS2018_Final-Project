@@ -41,9 +41,6 @@
     <ClInclude Include="Graphs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LinkList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AllMaps.h">
       <Filter>Header Files</Filter>
     </ClInclude>

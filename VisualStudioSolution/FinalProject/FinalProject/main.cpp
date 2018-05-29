@@ -21,20 +21,20 @@ int main() {
 	result2.print('Y',3);*/
 	AllMaps all;
 	all.run();
+	all.print();
 	cout <<"SIZE : "<< all.size() << endl;
 	//for (int i = 0; i < all.size(); i++) all.getData(i).print();
-	int start[] = {0,0};
-	int end[] = {0,4};
-	Map res = all.getData(7);
-	if (!res.isRun()) res.run();
+	int start[] = {0,2};
+	int end[] = {4,0};
+	Map res = all.getData(8);
 	res.print();
 	NavRoutes result(res, start, end);
 	Graph newGraph(result);
 	newGraph.run();
 	newGraph.print();
-	/*Map createNew;
+	Map createNew;
 	createNew.create();
-	all.insert(createNew);*/
+	all.insert(createNew);
 	cout << "Press Enter to Continue....";
 	cin.sync();
 	cin.ignore();

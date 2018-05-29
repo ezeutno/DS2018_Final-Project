@@ -56,3 +56,12 @@ Map AllMaps::getData(int i){
 	return allMap[i];
 }
 
+void AllMaps::print(){
+	vector<Map>::iterator iter;
+	int i = 1;
+	for(iter=allMap.begin(); iter != allMap.end(); ++iter){
+		cout <<"["<<i<<"] "<< *iter << endl;
+		i++;
+	}
+}
+

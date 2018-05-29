@@ -1,8 +1,9 @@
 Problem 1;example.txt
 Problem 2;pokeMap.txt
 Problem 3;pacman.txt
-Problem 5;test2.txt
-Problem 6;test3.txt
-Problem 7;youRock.txt
-Problem 8;wow.txt
-Problem 9;jamesbarlian.txt
+Problem 4;test2.txt
+Problem 5;test3.txt
+Problem 6;youRock.txt
+Problem 7;wow.txt
+Problem 8;jamesbarlian.txt
+Problem 9;davidlinklistnotworking.txt
