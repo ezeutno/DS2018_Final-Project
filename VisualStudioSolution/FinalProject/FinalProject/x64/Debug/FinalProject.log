@@ -2,8 +2,8 @@
   Graphs.cpp
   main.cpp
   mapText.cpp
-d:\project\datastructure2018_final-project2\visualstudiosolution\finalproject\finalproject\maptext.cpp(147): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-d:\project\datastructure2018_final-project2\visualstudiosolution\finalproject\finalproject\maptext.cpp(150): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\maptext.cpp(147): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\maptext.cpp(150): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   nav.cpp
   Generating Code...
-  FinalProject.vcxproj -> D:\Project\DataStructure2018_Final-Project2\VisualStudioSolution\FinalProject\x64\Debug\FinalProject.exe
+  FinalProject.vcxproj -> C:\Users\Ezech\iCloudDrive\Programming\C++\DataStructure2018_Final-Project\VisualStudioSolution\FinalProject\x64\Debug\FinalProject.exe

@@ -1,4 +1,6 @@
 #include <iostream>
+#include <list>
+#include <array>
 #include "mapText.h"
 using namespace std;
 
@@ -29,6 +31,8 @@ public:
 	bool left();
 	bool up();
 	bool down();
+
+	void print(list<char> listdata);
 };
 
 #endif

@@ -1,2 +1,0 @@
-﻿  main.cpp
-c:\users\ezech\iclouddrive\programming\c++\finalproject\finalproject\main.cpp : fatal error C1041: cannot open program database 'C:\Users\Ezech\iCloudDrive\Programming\C++\FinalProject\FinalProject\Debug\vc141.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS

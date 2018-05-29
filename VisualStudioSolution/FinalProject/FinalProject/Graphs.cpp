@@ -114,6 +114,22 @@ Graph::Graph(NavRoutes main){
 	cond = false;
 }
 
+void Graph::start(){
+	iter = AllRoutes.begin();
+}
+
+bool Graph::has_next(){
+	return iter != AllRoutes.end();
+}
+
+void Graph::next(){
+	++iter;
+}
+
+list<char> Graph::getCurrentList(){
+	return *iter;
+}
+
 bool Graph::isRun(){
 	return cond;
 }

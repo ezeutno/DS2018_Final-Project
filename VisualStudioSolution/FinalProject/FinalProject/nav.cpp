@@ -81,9 +81,61 @@ bool NavRoutes::up() {
 }
 
 bool NavRoutes::checkColl() {
-	/*cout << currPoint[0] << "|" << currPoint[1] << endl;
-	cout << "COLL : " << currPoint[0] << endPoint[0] << "|" << currPoint[1] << endPoint[1];*/
-	bool newBool = currPoint[0] == endPoint[0] && currPoint[1] == endPoint[1];
-	/*if(newBool) cout<<"collided"<<endl;*/
-	return newBool;
+	return currPoint[0] == endPoint[0] && currPoint[1] == endPoint[1];
+}
+
+void NavRoutes::print(list<char> listdata) {
+
+	//border
+	for (int a = 0; a < data.getSize('y'); a++) cout << "-";
+	cout << "--";
+	cout << endl;
+	list<char>::iterator iter;
+	vector<array<int,2>> allloc;
+	for (iter = listdata.begin(); iter != listdata.end(); ++iter) {
+		allloc.push_back({currPoint[0],currPoint[1]});
+		switch (*iter) {
+			case('r'):
+				right();
+				break;
+			case('l'):
+				left();
+				break;
+			case('u'):
+				up();
+				break;
+			case('d'):
+				down();
+				break;
+		}
+	}
+	for (int i = 0; i < data.getSize('x'); i++) {
+		cout << "|";
+		for (int a = 0; a < data.getSize('y'); a++) {
+			bool cond = false;
+			for (int b = 0; b <allloc.size() ; b++) {
+				if (i == allloc[b][0] && a == allloc[b][1]) {
+					cond = true;
+					break;
+				}
+			}
+			if (cond && !data.getData(i, a) || i == endPoint[0] && a == endPoint[1]) {
+				cout << '>';
+				
+			}else if(data.getData(i, a)) {
+				cout << '*';
+			}else {
+				cout << ' ';
+			}
+		}
+		cout << "|" << endl;
+	}
+	//border
+	for (int a = 0; a < data.getSize('y'); a++) cout << "-";
+	cout << "--";
+	cout << endl;
+
+	//reset current pos
+	currPoint[0] = startPoint[0];
+	currPoint[1] = startPoint[1];
 }
