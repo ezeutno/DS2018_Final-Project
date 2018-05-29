@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <cstdlib>
 #include <conio.h>
 #include "interface.h"
@@ -13,14 +13,35 @@ void header(string title) {
 
 	system("CLS");
 	cout << B_TL << b_horizontal.c_str() << B_TR << endl;
-	cout << B_V << "\t      " << title.c_str() << "\t\t" << B_V << endl;
+	cout << B_V << "\t" << title.c_str() << "\t\t" << B_V << endl;
 	cout << B_ML << b_horizontal.c_str() << B_MR << endl;
 	cout << B_V << "\t\t\t\t" <<B_V<< endl;
 }
 
+void select_map() {
+	header("SELECT MAP");
+	cout << B_BL << b_horizontal.c_str() << B_BR << endl;
+	cin.sync();
+	cin.ignore();
+}
+
+void list_maps() {
+	header("LIST MAPS");
+	cout << B_BL << b_horizontal.c_str() << B_BR << endl;
+	cin.sync();
+	cin.ignore();
+}
+
+void create_map() {
+	header("CREATE MAP");
+	cout << B_BL << b_horizontal.c_str() << B_BR << endl;
+	cin.sync();
+	cin.ignore();
+}
+
 void menu() {
 	while (true) {
-		header("MENU");
+		header("      MENU");
 		system("Color 0E");
 		cout << B_V << "\t1. Select map\t\t" << B_V << endl;
 		cout << B_V << "\t2. List all maps\t" << B_V << endl;
@@ -32,13 +53,13 @@ void menu() {
 		int x = _getch();
 		switch (x) {
 		case '1':
-			cout << "lol1" << endl;
+			select_map();
 			break;
 		case '2':
-			cout << "lol2" << endl;
+			list_maps();
 			break;
 		case '3':
-			cout << "lol3" << endl;
+			create_map();
 			break;
 		case '4':
 			exit(0);
