@@ -5,9 +5,16 @@ Map::Map() {
 }
 
 Map::Map(string loc, string name) {
-	runCond = false;
-	location = "C:/Users/Ezech/iCloudDrive/Programming/C++/DataStructure2018_Final-Project/VisualStudioSolution/FinalProject/FinalProject/"+loc;
+	this->runCond = false;
+	//location = "C:/Users/Ezech/iCloudDrive/Programming/C++/DataStructure2018_Final-Project/VisualStudioSolution/FinalProject/FinalProject/"+loc;
+	this->location = loc;
 	this->name = name;
+}
+
+Map::Map(const Map& data) {
+	this->location = data.location;
+	this->name = data.name;
+	if (data.runCond) this->run();
 }
 
 bool Map::isRun() {
@@ -17,23 +24,31 @@ bool Map::isRun() {
 void Map::create() {
 	int x, y;
 	try {
-		cout << "Please insert problem name : ";
-		getline(cin, name);
-		cout << "Please insert file name    : ";
-		getline(cin, location);
-		location += ".txt";
+		do {
+			cout << "Please insert problem name : ";
+			getline(cin, name);
+			cout << "Please insert file name    : ";
+			getline(cin, location);
+			location += ".txt";
+		} while (name.length() + location.length() > 10000);
 		do{
-			cout << "Please input x dimention : ";
+			cout << "Please input x dimention   : ";
 			cin >> x;
 		} while (x < 0);
 		do {
-			cout << "Please input y dimention : ";
+			cout << "Please input y dimention   : ";
 			cin >> y;
 		} while (y < 0);
 		cin.sync();
 		cin.ignore();
+		cout << "Create Map*                : " << endl;
+		cout << "*Use space for road" << endl << "*Use char for block" << endl;
 		myfileWrite = ofstream(location.c_str());
+		cout << "X";
+		for (int a = 0; a < x; a++) cout << a % 10;
+		cout << endl;
 		for (int i = 0; i < y; i++) {
+			cout << i % 10;
 			string data;
 			getline(cin, data);
 			for (int b = 0; b < x; b++) {
@@ -60,8 +75,7 @@ void Map::run() {
 			for (int i = 0; i<line.length(); i++) {
 				if (line.at(i) == '0') {
 					tempLine.push_back(false);
-				}
-				else {
+				}else {
 					tempLine.push_back(true);
 				}
 			}
@@ -103,7 +117,7 @@ void Map::print(char block, int border) {
 	}
 }
 
-void Map::operator=(const Map & a) {
+void Map::operator=(Map & a) {
 	this->location = a.location;
 	this->name = a.name;
 	if (a.runCond) {
@@ -147,4 +161,13 @@ string Map::getLocation() {
 
 string Map::getName() {
 	return name;
+}
+
+ofstream & operator<<(ofstream& os, Map& b){
+	os << b.getName() << ";" << b.getLocation();
+	return os;
+}
+
+ostream & operator<<(ostream &, Map & b){
+	return cout<< b.getName() << ";" << b.getLocation();
 }

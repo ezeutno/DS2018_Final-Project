@@ -18,6 +18,7 @@ private:
 public:
 	Map();
 	Map(string loc, string = "Problem");
+	Map(const Map& data);
 	string getName();
 	bool isRun();
 	void run();
@@ -28,7 +29,9 @@ public:
 	string getLocation();
 	void create();
 	void print(char = '*', int = 1);
-	void operator=(const Map & a);
+	void operator=(Map & a);
+	friend ofstream & operator<<(ofstream &, Map & b);
+	friend ostream & operator<<(ostream &, Map & b);
 };
 
 #endif

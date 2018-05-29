@@ -1,1 +1,5 @@
 Problem 1;example.txt
+Problem 2;pokeMap.txt
+Problem 3;pacman.txt
+Problem 5;test2.txt
+Problem 6;test3.txt

@@ -1,11 +1,12 @@
 #include <iostream>
+#include "AllMaps.h"
 #include "mapText.h"
 #include "nav.h"
 using namespace std;
 
 int main() {
 	cout << "MAIN" << endl;
-	Map res("example.txt");
+	/*Map res("example.txt");
 	res.run();
 	res.print('X', 4);
 	cout << "GET DATA : " << res.getData(7, 6) << endl;
@@ -16,7 +17,14 @@ int main() {
 	Map result2;
 	result2.create();
 	result2.run();
-	result2.print('Y',3);
+	result2.print('Y',3);*/
+	AllMaps all;
+	all.run();
+	cout <<"SIZE : "<< all.size() << endl;
+	for (int i = 0; i < all.size(); i++) all.getData(i).print();
+	Map createNew;
+	createNew.create();
+	all.insert(createNew);
 	cout << "Press Enter to Continue....";
 	cin.sync();
 	cin.ignore();
