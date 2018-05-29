@@ -1,4 +1,5 @@
 #include <iostream>
+#include "interface.h"
 #include "AllMaps.h"
 #include "mapText.h"
 #include "nav.h"
@@ -7,6 +8,10 @@ using namespace std;
 
 int main() {
 	cout << "MAIN" << endl;
+	AllMaps all;
+	all.run();
+	interface run;
+	run.menu();
 	/*Map res("example.txt");
 	res.run();
 	res.print('X', 4);
@@ -19,14 +24,14 @@ int main() {
 	result2.create();
 	result2.run();
 	result2.print('Y',3);*/
-	AllMaps all;
+	/*AllMaps all;
 	all.run();
 	all.print();
 	cout << "SIZE : " << all.size() << endl;
 	//for (int i = 0; i < all.size(); i++) all.getData(i).print();
 	int start[] = { 0,0 };
-	int end[] = { 0,4 };
-	Map res = all.getData(7);
+	int end[] = { 18,0 };
+	Map res = all.getData(9);
 	res.print();
 	NavRoutes result(res, start, end);
 	Graph newGraph(result);
@@ -39,7 +44,7 @@ int main() {
 	}
 	Map createNew;
 	createNew.create();
-	all.insert(createNew);
+	all.insert(createNew);*/
 	cout << "Press Enter to Continue....";
 	cin.sync();
 	cin.ignore();

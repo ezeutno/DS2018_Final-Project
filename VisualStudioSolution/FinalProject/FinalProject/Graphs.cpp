@@ -5,6 +5,7 @@ void Graph::insert(list<char> data){
 	list< list<char> >::iterator before;
 	before = AllRoutes.begin();
 	bool newtempCond = false;
+	cout << ".";
 	for (iter = AllRoutes.begin(); iter != AllRoutes.end(); iter++) {
 		list<char> newdata = *iter;
 		if (newdata.size()> data.size()) {

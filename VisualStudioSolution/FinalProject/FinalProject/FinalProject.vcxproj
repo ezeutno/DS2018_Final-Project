@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="AllMaps.cpp" />
     <ClCompile Include="Graphs.cpp" />
+    <ClCompile Include="Interface.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapText.cpp" />
     <ClCompile Include="nav.cpp" />
@@ -124,6 +125,7 @@
   <ItemGroup>
     <ClInclude Include="AllMaps.h" />
     <ClInclude Include="Graphs.h" />
+    <ClInclude Include="interface.h" />
     <ClInclude Include="mapText.h" />
     <ClInclude Include="nav.h" />
   </ItemGroup>
