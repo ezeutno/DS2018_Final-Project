@@ -19,7 +19,12 @@ public:
 	NavRoutes(Map & data, int start[], int end[]);
 	void setStartPoint(int x, int y);
 	void setEndPoint(int x, int y);
+	
+	int getX();
+	int getY();
+	
 	bool checkColl();
+
 	bool right();
 	bool left();
 	bool up();

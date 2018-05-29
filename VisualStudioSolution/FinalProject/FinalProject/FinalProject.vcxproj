@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AllMaps.cpp" />
+    <ClCompile Include="Graphs.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapText.cpp" />
     <ClCompile Include="nav.cpp" />

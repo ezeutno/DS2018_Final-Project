@@ -32,11 +32,11 @@ void Map::create() {
 			location += ".txt";
 		} while (name.length() + location.length() > 10000);
 		do{
-			cout << "Please input x dimention   : ";
+			cout << "Please input x dimension   : ";
 			cin >> x;
 		} while (x < 0);
 		do {
-			cout << "Please input y dimention   : ";
+			cout << "Please input y dimension   : ";
 			cin >> y;
 		} while (y < 0);
 		cin.sync();
@@ -104,7 +104,7 @@ void Map::print(char block, int border) {
 		for (int d = 0; d<border; d++) cout << "|";
 		for (a = res.begin(); a != res.end(); ++a) {
 			if (*a) cout << block;
-			else cout << ' ';
+			else cout << '1';
 		}
 		for (int d = 0; d<border; d++) cout << "|";
 		cout << endl;

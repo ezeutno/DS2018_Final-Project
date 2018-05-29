@@ -51,13 +51,11 @@ public:
 	iterator find(iterator begin, iterator end, const T &book);
 	iterator push_front(const T &book);
 	iterator push_back(const T &book);
-
 	void clear();
 	bool empty();
 	int size();
 
 	linkedlistADT();
-	~linkedlistADT();
 
 private:
 	int count;
@@ -69,11 +67,6 @@ template<typename T>
 linkedlistADT<T>::linkedlistADT() {
 	count = 0;
 	head = tail = new NODE<T>;
-}
-
-template<typename T>
-linkedlistADT<T>::~linkedlistADT() {
-	clear();
 }
 
 template<typename T>

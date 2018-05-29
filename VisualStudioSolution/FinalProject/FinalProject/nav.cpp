@@ -17,15 +17,23 @@ void NavRoutes::create() {
 }
 
 void NavRoutes::setStartPoint(int x, int y) {
-	startPoint[0] = x;
-	startPoint[1] = y;
-	currPoint[0] = x;
-	currPoint[1] = y;
+	startPoint[0] = y;
+	startPoint[1] = x;
+	currPoint[0] = y;
+	currPoint[1] = x;
 }
 
 void NavRoutes::setEndPoint(int x, int y) {
-	endPoint[0] = x;
-	endPoint[1] = y;
+	endPoint[0] = y;
+	endPoint[1] = x;
+}
+
+int NavRoutes::getX(){
+	return currPoint[0];
+}
+
+int NavRoutes::getY(){
+	return currPoint[1];
 }
 
 bool NavRoutes::right() {
@@ -69,5 +77,7 @@ bool NavRoutes::up() {
 }
 
 bool NavRoutes::checkColl() {
-	return currPoint[0] == endPoint[0] && currPoint[1] == endPoint[1];
+	bool newBool = currPoint[0] == endPoint[0] && currPoint[1] == endPoint[1];
+	if(newBool) cout<<"collided"<<endl;
+	return newBool;
 }

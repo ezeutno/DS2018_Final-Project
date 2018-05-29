@@ -2,6 +2,7 @@
 #include "AllMaps.h"
 #include "mapText.h"
 #include "nav.h"
+#include "Graphs.h"
 using namespace std;
 
 int main() {
@@ -21,10 +22,19 @@ int main() {
 	AllMaps all;
 	all.run();
 	cout <<"SIZE : "<< all.size() << endl;
-	for (int i = 0; i < all.size(); i++) all.getData(i).print();
-	Map createNew;
+	//for (int i = 0; i < all.size(); i++) all.getData(i).print();
+	int start[] = {0,0};
+	int end[] = {0,4};
+	Map res = all.getData(7);
+	if (!res.isRun()) res.run();
+	res.print();
+	NavRoutes result(res, start, end);
+	Graph newGraph(result);
+	newGraph.run();
+	newGraph.print();
+	/*Map createNew;
 	createNew.create();
-	all.insert(createNew);
+	all.insert(createNew);*/
 	cout << "Press Enter to Continue....";
 	cin.sync();
 	cin.ignore();

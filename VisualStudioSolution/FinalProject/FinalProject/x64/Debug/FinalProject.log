@@ -1,2 +1,24 @@
-﻿  AllMaps.cpp
-  FinalProject.vcxproj -> C:\Users\Ezech\iCloudDrive\Programming\C++\DataStructure2018_Final-Project\VisualStudioSolution\FinalProject\x64\Debug\FinalProject.exe
+﻿  Graphs.cpp
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(55): error C2061: syntax error: identifier 'linklistADT'
+  c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(66): note: see reference to class template instantiation 'linkedlistADT<T>' being compiled
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(55): error C2805: binary 'operator =' has too few parameters
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C2065: 'linklistADT': undeclared identifier
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C2065: 'a': undeclared identifier
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C2182: '=': illegal use of type 'void'
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C7525: inline variables require at least '/std:c++17'
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C2470: 'linkedlistADT<T>::operator =': looks like a function definition, but there is no parameter list; skipping apparent body
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C2447: '{': missing function header (old-style formal list?)
+  main.cpp
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(55): error C2061: syntax error: identifier 'linklistADT'
+  c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(66): note: see reference to class template instantiation 'linkedlistADT<T>' being compiled
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(55): error C2805: binary 'operator =' has too few parameters
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C2065: 'linklistADT': undeclared identifier
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C2065: 'a': undeclared identifier
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C2182: '=': illegal use of type 'void'
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C7525: inline variables require at least '/std:c++17'
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C2470: 'linkedlistADT<T>::operator =': looks like a function definition, but there is no parameter list; skipping apparent body
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\linklist.h(162): error C2447: '{': missing function header (old-style formal list?)
+  mapText.cpp
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\maptext.cpp(147): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\maptext.cpp(150): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
