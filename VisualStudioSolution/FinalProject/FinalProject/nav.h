@@ -1,6 +1,7 @@
 #include <iostream>
 #include <list>
 #include <array>
+#include <windows.h>
 #include "mapText.h"
 using namespace std;
 
@@ -21,8 +22,13 @@ public:
 	void setStartPoint(int x, int y);
 	void setEndPoint(int x, int y);
 	
-	int getX();
-	int getY();
+	int const getX();
+	int const getY();
+	Map getMap();
+	int getSX();
+	int getSY();
+	int getEX();
+	int getEY();
 	
 	bool checkColl();
 

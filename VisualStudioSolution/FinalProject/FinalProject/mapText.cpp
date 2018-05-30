@@ -96,7 +96,7 @@ void Map::print(char block, int border) {
 	//border
 	for (int c = 0; c<border; c++) {
 		for (a = data[0].begin(); a != data[0].end(); ++a) cout << "-";
-		for (int d = 0; d<border; d++) cout << "--";
+		for (int d = 0; d<border; d++) cout << "---";
 		cout << endl;
 	}
 	cout << "--";
@@ -148,7 +148,7 @@ void Map::setLocation(string loc) {
 	this->location = loc;
 }
 
-int Map::getSize(char position) {
+int  Map::getSize(char position) {
 	if (position == 'x') {
 		return this->data.size();
 	}

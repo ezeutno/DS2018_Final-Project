@@ -51,24 +51,54 @@ void show_map() {
 }
 
 void select_map() {
-	header("RUN MAP");
+	header("RUN ALL MAP SOLUTION");
 	int data;
 	cout << "Insert Map Code\t\t\t: ";
 	cin >> data;
-	if (data <= all.size()) {
+	if (data > 0 && data <= all.size()) {
 		Map newMap = all.getData(data - 1);
 		if (!newMap.isRun())newMap.run();
 		newMap.print();
 		NavRoutes newNav(newMap);
 		int x, y;
-		cout << "Set X & Y Starting Point\t: ";
-		cin >> x >> y;
+		while (true) {
+			cout << "Set X & Y Starting Point\t: ";
+			cin >> x >> y;
+			if (x < newMap.getSize('y') && y < newMap.getSize('x')) {
+				if (newMap.getData(y,x)) {
+					cout << "Starting point hit blockade!" << endl;
+				}else {
+					break;
+				}
+			}
+			else cout << "Starting point out of border!" << endl;
+		}
 		newNav.setStartPoint(x, y);
-		cout << "Set X & Y Ending Point\t\t: ";
-		cin >> x >> y;
+		while (true) {
+			cout << "Set X & Y Ending Point\t\t: ";
+			cin >> x >> y;
+			if (x < newMap.getSize('y') && y < newMap.getSize('x')) {
+				if (newMap.getData(y, x)) {
+					cout << "Ending point hit blockade!" << endl;
+				}else {
+					break;
+				}
+			}
+			else cout << "Ending point out of border!" << endl;
+		}
 		newNav.setEndPoint(x, y);
+
 		Graph newGraph(newNav);
-		newGraph.run();
+		int choice;
+		cout << "Do you want to get all solution? (yes-1/no-0) ";
+		choice = _getch();
+		if (choice == '1') {
+			newGraph.run(true);
+		}
+		else if (choice == '0') {
+			newGraph.run(false);
+		}
+		cout << endl;
 		newGraph.start();
 		while (newGraph.has_next()) {
 			system("CLS");
@@ -77,16 +107,17 @@ void select_map() {
 			cout << "[1] Next Solution" << endl;
 			cout << "[2] Show All Step" << endl;
 			cout << "[0] Exit" << endl;
-			cin >> data;
-			if (data == 1) newGraph.next();
-			else if (data == 2) {
+			data = _getch();
+			if (data == '1') {
+				newGraph.next();
+				if (!newGraph.has_next()) cout << "NO MORE SOLUTION, EXITING!" << endl;
+			}else if (data == '2') {
 				system("CLS");
 				header("ALL SOLUTION");
 				newMap.print();
 				newGraph.print();
 				break;
-			}else if (data == 0) break;
-			else cout << "Wrong Input!" << endl;
+			}else if (data == '0') break;
 		}
 	}else {
 		cout << "Data must be between 1 & " << all.size() << "!" << endl;
@@ -120,7 +151,7 @@ int main() {
 		if (!all.isRun()) all.run();
 		header("MENU");
 		system("Color 0E");
-		cout << "[1] Run map" << endl;
+		cout << "[1] Run all map solution" << endl;
 		cout << "[2] List all maps" << endl;
 		cout << "[3] Create new map" << endl;
 		cout << "[4] Show Map" << endl;

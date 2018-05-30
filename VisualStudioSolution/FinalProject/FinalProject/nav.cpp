@@ -1,4 +1,4 @@
-#include "nav.h"
+﻿#include "nav.h"
 
 NavRoutes::NavRoutes(){
 }
@@ -29,12 +29,32 @@ void NavRoutes::setEndPoint(int x, int y) {
 	endPoint[1] = x;
 }
 
-int NavRoutes::getX(){
+int const NavRoutes::getX(){
 	return currPoint[0];
 }
 
-int NavRoutes::getY(){
+int const NavRoutes::getY(){
 	return currPoint[1];
+}
+
+Map NavRoutes::getMap(){
+	return data;
+}
+
+int NavRoutes::getSX(){
+	return startPoint[1];
+}
+
+int NavRoutes::getSY(){
+	return startPoint[0];
+}
+
+int NavRoutes::getEX(){
+	return endPoint[1];
+}
+
+int NavRoutes::getEY(){
+	return endPoint[0];
 }
 
 bool NavRoutes::right() {
@@ -93,6 +113,7 @@ void NavRoutes::print(list<char> listdata) {
 	cout << endl;
 	list<char>::iterator iter;
 	vector<array<int,2>> allloc;
+	vector<char> movement;
 	for (iter = listdata.begin(); iter != listdata.end(); ++iter) {
 		allloc.push_back({currPoint[0],currPoint[1]});
 		switch (*iter) {
@@ -109,25 +130,28 @@ void NavRoutes::print(list<char> listdata) {
 				down();
 				break;
 		}
+		movement.push_back(*iter);
 	}
 	for (int i = 0; i < data.getSize('x'); i++) {
 		cout << "|";
+		char newChar;
 		for (int a = 0; a < data.getSize('y'); a++) {
 			bool cond = false;
 			for (int b = 0; b <allloc.size() ; b++) {
 				if (i == allloc[b][0] && a == allloc[b][1]) {
+					newChar = movement[b];
 					cond = true;
 					break;
 				}
 			}
-			if (cond && !data.getData(i, a) || i == endPoint[0] && a == endPoint[1]) {
-				cout << '>';
-				
-			}else if(data.getData(i, a)) {
-				cout << '*';
-			}else {
-				cout << ' ';
-			}
+			if (i == startPoint[0] && a == startPoint[1]) cout << 'S';
+			else if(i == endPoint[0] && a == endPoint[1]) cout << 'E';
+			else if (cond && !data.getData(i, a) && newChar == 'r') printf(">");
+			else if (cond && !data.getData(i, a) && newChar == 'l') printf("<");
+			else if (cond && !data.getData(i, a) && newChar == 'u') printf("^");
+			else if (cond && !data.getData(i, a) && newChar == 'd') printf("v");
+			else if(data.getData(i, a)) cout << '*';
+			else cout << ' ';
 		}
 		cout << "|" << endl;
 	}

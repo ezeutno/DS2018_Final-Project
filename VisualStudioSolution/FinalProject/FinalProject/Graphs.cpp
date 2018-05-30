@@ -1,6 +1,8 @@
 #include "Graphs.h"
 
 void Graph::insert(list<char> data){
+	solved = true;
+	minimum = data.size();
 	list< list<char> >::iterator iter;
 	list< list<char> >::iterator before;
 	before = AllRoutes.begin();
@@ -21,20 +23,23 @@ void Graph::insert(list<char> data){
 
 void Graph::right(NavRoutes main, list<char> listData, vector<array<int, 2>> points) {
 	if (main.right()) {
-		if (main.checkColl()) {
-			listData.push_back('r');
-			insert(listData);
-		}else {
-			bool newcond = false;
-			for (int i = 0; i < points.size(); i++) {
-				if (main.getX() == points[i][0] && main.getY() == points[i][1]) newcond = true;
-			}
-			if (!newcond) {
-				points.push_back({ main.getX() ,main.getY() });
+		if (!solved || listData.size() < minimum-1 || allsolution) {
+			if (main.checkColl()) {
 				listData.push_back('r');
-				right(main, listData, points);
-				down(main, listData, points);
-				up(main, listData, points);
+				insert(listData);
+			}
+			else {
+				bool newcond = false;
+				for (int i = 0; i < points.size(); i++) {
+					if (main.getX() == points[i][0] && main.getY() == points[i][1]) newcond = true;
+				}
+				if (!newcond) {
+					points.push_back({ main.getX() ,main.getY() });
+					listData.push_back('r');
+					right(main, listData, points);
+					down(main, listData, points);
+					up(main, listData, points);
+				}
 			}
 		}
 	}
@@ -42,21 +47,22 @@ void Graph::right(NavRoutes main, list<char> listData, vector<array<int, 2>> poi
 
 void Graph::left(NavRoutes main, list<char> listData, vector<array<int, 2>> points){
 	if (main.left()) {
-		if (main.checkColl()) {
-			listData.push_back('l');
-			insert(listData);
-		}
-		else {
-			bool newcond = false;
-			for (int i = 0; i < points.size(); i++) {
-				if (main.getX() == points[i][0] && main.getY() == points[i][1]) newcond = true;
-			}
-			if (!newcond) {
-				points.push_back({ main.getX() ,main.getY() });
+		if (!solved || listData.size() < minimum-1 || allsolution) {
+			if (main.checkColl()) {
 				listData.push_back('l');
-				left(main, listData, points);
-				down(main, listData, points);
-				up(main, listData, points);
+				insert(listData);
+			}
+			else {
+				bool newcond = false;
+				for (int i = 0; i < points.size(); i++) {
+					if (main.getX() == points[i][0] && main.getY() == points[i][1]) newcond = true;
+				}if (!newcond) {
+					points.push_back({ main.getX() ,main.getY() });
+					listData.push_back('l');
+					left(main, listData, points);
+					down(main, listData, points);
+					up(main, listData, points);
+				}
 			}
 		}
 	}
@@ -64,21 +70,23 @@ void Graph::left(NavRoutes main, list<char> listData, vector<array<int, 2>> poin
 
 void Graph::up(NavRoutes main, list<char> listData, vector<array<int, 2>> points){
 	if (main.up()) {
-		if (main.checkColl()) {
-			listData.push_back('u');
-			insert(listData);
-		}
-		else {
-			bool newcond = false;
-			for (int i = 0; i < points.size(); i++) {
-				if (main.getX() == points[i][0] && main.getY() == points[i][1]) newcond = true;
-			}
-			if (!newcond) {
-				points.push_back({ main.getX() ,main.getY() });
+		if (!solved || listData.size() < minimum-1 || allsolution) {
+			if (main.checkColl()) {
 				listData.push_back('u');
-				right(main, listData, points);
-				left(main, listData, points);
-				up(main, listData, points);
+				insert(listData);
+			}
+			else {
+				bool newcond = false;
+				for (int i = 0; i < points.size(); i++) {
+					if (main.getX() == points[i][0] && main.getY() == points[i][1]) newcond = true;
+				}
+				if (!newcond) {
+					points.push_back({ main.getX() ,main.getY() });
+					listData.push_back('u');
+					right(main, listData, points);
+					left(main, listData, points);
+					up(main, listData, points);
+				}
 			}
 		}
 	}
@@ -86,11 +94,12 @@ void Graph::up(NavRoutes main, list<char> listData, vector<array<int, 2>> points
 
 void Graph::down(NavRoutes main, list<char> listData, vector<array<int, 2>> points){
 	if (main.down()) {
-		if (main.checkColl()) {
-			listData.push_back('d');
-			insert(listData);
-		}
-		else {
+		if (!solved || listData.size() < minimum - 1||allsolution) {
+			if (main.checkColl()) {
+				listData.push_back('d');
+				insert(listData);
+			}
+			else {
 			bool newcond = false;
 			for (int i = 0; i < points.size(); i++) {
 				if (main.getX() == points[i][0] && main.getY() == points[i][1]) newcond = true;
@@ -102,6 +111,7 @@ void Graph::down(NavRoutes main, list<char> listData, vector<array<int, 2>> poin
 				down(main, listData, points);
 				left(main, listData, points);
 			}
+		}
 		}
 	}
 }
@@ -135,16 +145,18 @@ bool Graph::isRun(){
 	return cond;
 }
 
-void Graph::run(){
+void Graph::run(bool sol){
+	allsolution = sol;
 	cond = true;
 	list<char> movements;
 	vector<array<int,2>> points;
-	cout << "Running Calculation......";
+	cout << "Running Calculation.";
 	right(main, movements, points);
 	left(main, movements, points);
 	down(main, movements, points);
 	up(main, movements, points);
 	cout << "Finished!"<<endl;
+	if (AllRoutes.size() == 0) cout << "SOLUTION NOT FOUND!" << endl;
 }
 
 void Graph::print(){

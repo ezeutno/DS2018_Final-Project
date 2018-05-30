@@ -9,3 +9,5 @@ Problem 8;jamesbarlian.txt
 Problem 9;davidlinklistnotworking.txt
 Problem 11;test39201.txt
 Problem Done;jamesdavidivan.txt
+Pacman World;pacWorld.txt
+Problem Final;latestMap.txt
