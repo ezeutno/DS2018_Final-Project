@@ -1,0 +1,12 @@
+﻿  AllMaps.cpp
+  Graphs.cpp
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\graphs.cpp(5): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+  mapText.cpp
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\maptext.cpp(153): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\ezech\iclouddrive\programming\c++\datastructure2018_final-project\visualstudiosolution\finalproject\finalproject\maptext.cpp(156): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  nav.cpp
+  Generating code
+  All 831 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  FinalProject.vcxproj -> C:\Users\Ezech\iCloudDrive\Programming\C++\DataStructure2018_Final-Project\VisualStudioSolution\FinalProject\x64\Release\FinalProject.exe

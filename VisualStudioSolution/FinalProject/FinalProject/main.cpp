@@ -89,9 +89,8 @@ void select_map() {
 		newNav.setEndPoint(x, y);
 
 		Graph newGraph(newNav);
-		int choice;
 		cout << "Do you want to get all solution? (yes-1/no-0) ";
-		choice = _getch();
+		int choice = _getch();
 		if (choice == '1') {
 			newGraph.run(true);
 		}
@@ -107,17 +106,17 @@ void select_map() {
 			cout << "[1] Next Solution" << endl;
 			cout << "[2] Show All Step" << endl;
 			cout << "[0] Exit" << endl;
-			data = _getch();
-			if (data == '1') {
+			int newdata = _getch();
+			if (newdata == '1') {
 				newGraph.next();
 				if (!newGraph.has_next()) cout << "NO MORE SOLUTION, EXITING!" << endl;
-			}else if (data == '2') {
+			}else if (newdata == '2') {
 				system("CLS");
 				header("ALL SOLUTION");
 				newMap.print();
 				newGraph.print();
 				break;
-			}else if (data == '0') break;
+			}else if (newdata == '0') break;
 		}
 	}else {
 		cout << "Data must be between 1 & " << all.size() << "!" << endl;
