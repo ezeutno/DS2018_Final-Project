@@ -11,3 +11,4 @@ Problem 11;test39201.txt
 Problem Done;jamesdavidivan.txt
 Pacman World;pacWorld.txt
 Problem Final;latestMap.txt
+new map;newmap.txt
