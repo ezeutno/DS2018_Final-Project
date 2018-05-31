@@ -90,13 +90,10 @@ void select_map() {
 
 		Graph newGraph(newNav);
 		cout << "Do you want to get all solution? (yes-1/no-0) ";
-		int choice = _getch();
-		if (choice == '1') {
-			newGraph.run(true);
-		}
-		else if (choice == '0') {
-			newGraph.run(false);
-		}
+		int choice;
+		cin >> choice;
+		if (choice == 1) newGraph.run(true);
+		else if (choice == 0) newGraph.run(false);
 		cout << endl;
 		newGraph.start();
 		while (newGraph.has_next()) {

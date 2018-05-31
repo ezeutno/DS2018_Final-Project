@@ -1,5 +1,6 @@
 #include "mapText.h"
 
+
 Map::Map() {
 	runCond = false;
 }
